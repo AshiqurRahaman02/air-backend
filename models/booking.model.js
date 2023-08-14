@@ -6,7 +6,7 @@ const bookingSchema = new Schema({
 	flight: { type: Schema.Types.ObjectId, ref: "Flight" },
 });
 
-const BookingModel = mongoose.model("Booking", bookingSchema);
+const BookingModel = mongoose.model("booking", bookingSchema);
 
 module.exports = {
 	BookingModel,
