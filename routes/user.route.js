@@ -18,7 +18,7 @@ userRouter.post('/api/register',async (req,res)=>{
 
             const newUser = new UserModel({email, password:hash, name})
 
-            newUser.save();
+            await newUser.save();
             res.status(201).json({isError:false,message: "User registered successfully"});
         });
     } catch (error) {
