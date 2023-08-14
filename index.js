@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const { conection } = require('./config/db')
 const { userRouter } = require('./routes/user.route')
+const { flightRouter } = require('./routes/flight.route')
+const { bookingRouter } = require('./routes/booking.route')
 require("dotenv").config()
 
 const app = express()
@@ -12,6 +14,8 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/user", userRouter)
+app.use("/flight", flightRouter)
+app.use("/booking", bookingRouter)
 
 app.get('/',(req,res) => {
     res.send("Welcome to the Express server")
